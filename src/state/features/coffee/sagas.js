@@ -5,7 +5,7 @@ import { getCoffeesErrors, getCoffeesLoading, getCoffeesSuccess } from './reduce
 
 function* getCoffesFlow(action) {
     try {
-        const coffees = yield call(getCoffees,action.payload);
+        const coffees = yield call(getCoffees);
         yield put(getCoffeesSuccess(coffees));
     } catch (error) {
         yield put(getCoffeesErrors(error));

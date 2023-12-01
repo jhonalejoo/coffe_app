@@ -16,7 +16,6 @@ import {
 import { Provider } from 'react-redux'
 import Navigation from './src/navigations/Navigation';
 import store from './src/state/store';
-import { colors } from './src/utils/constants';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,11 +23,10 @@ const App = () => {
   return (
     <Provider store={store}>
       {Platform.OS === 'ios' && <SafeAreaView style={{ flex: 0}} />}
-      <SafeAreaView style={{ flex: 1,backgroundColor: colors.primary }}>
+      <SafeAreaView style={{ flex: 1}}>
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           hidden={false}
-          backgroundColor= {colors.primary}
         />
         <Navigation />
       </SafeAreaView>

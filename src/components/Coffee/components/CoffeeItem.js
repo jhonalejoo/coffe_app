@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import FastImage from 'react-native-fast-image'
-import { colors } from '../../../utils/constants'
 
 const CoffeeItem = ({ item, index, action }) => {
     return (
-        <TouchableOpacity onPress={() => action()} index={index} style={styles.container}>
-            <View style={{flexDirection: 'row'}}>
+        <View index={index} style={styles.container}>
+            <View style={{ flexDirection: 'row' }}>
                 <FastImage source={{ uri: item.image }} style={styles.image} />
                 <View style={styles.containerText}>
-                    <View>
-                        <Text style={styles.textSubTitle}>{item.name}</Text>
-                    </View>
+                    <Text style={styles.textTitle}>{item.name}</Text>
+                    <TouchableOpacity onPress={()=>action()} style={styles.button} onPress={() => action()}>
+                        <Text style={styles.textButton}>Agregar comentario</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 
@@ -24,26 +24,43 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         padding: 20,
+        backgroundColor: 'white',
+        borderColor: '#F6F6F6',
         borderRadius: 5,
         marginVertical: 5,
-        justifyContent: 'space-between'
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
 
+        elevation: 3,
+    },
+    button:{
+       backgroundColor:'#674334',
+       marginTop: 10,
+       borderRadius:5,
+       width:100,
+       height:25,
+       alignItems:'center',
+       justifyContent:'center'
+    },
+    textButton:{
+        color:'white',
+        fontSize:10
     },
     containerText: {
-        marginLeft: 20,
+        marginLeft: 20
     },
     textTitle: {
         fontWeight: 'bold',
-        fontSize: 15,
-        color: colors.white
-    },
-    textSubTitle: {
-        fontSize: 13,
-        color: colors.secondary
+        fontSize: 15
     },
     image: {
-        width: 40,
-        height: 40,
+        width: 80,
+        height: 80,
         borderRadius: 10
     }
 })
