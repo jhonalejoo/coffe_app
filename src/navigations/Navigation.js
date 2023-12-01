@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from '../components/Coffee/Home';
-import { colors } from '../utils/constants';
+import Coffee from '../components/Coffee/Coffee';
+import Comment from '../components/comments/Comment';
+import TabComponent from './Tab';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,11 +26,11 @@ const Navigation = () => {
 
                     headerTitleAlign: 'center',
                     headerStyle: {
-                        backgroundColor: colors.primary,
                         alignItems: 'center',
-                        borderColor:colors.primary
+                        backgroundColor:'#674334'
                     },
-                    headerTintColor: '#fff',
+                    headerTintColor:'white',
+                    background:'#674334',
                     headerShadowVisible: false, // applied here
                     headerTitleStyle: {
                         fontWeight: 'bold',
@@ -40,7 +41,7 @@ const Navigation = () => {
                 }
                 }
             >
-                <Stack.Screen name="Coffees"  component={Home} options={{ title: 'Coffee App' }}/>
+                <Stack.Screen name="Tab"  component={TabComponent} options={{ title: 'Coffee App' }}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -4,7 +4,8 @@ const initialState = {
         coffees: [],
         hasError: false,
         isLoading: false
-    }
+    },
+    focusCoffee:{}
 }
 export const coffeeSlice = createSlice({
     name: 'coffe',
@@ -20,6 +21,9 @@ export const coffeeSlice = createSlice({
         getCoffeesErrors: (state) => {
             state.getCoffees.isLoading = false;
             state.getCoffees.hasError = true;
+        },
+        focusCoffee : (state,action)=>{
+            state.focusCoffee = action.payload;
         } 
     }
 })
@@ -27,7 +31,8 @@ export const coffeeSlice = createSlice({
 export const {
     getCoffeesLoading,
     getCoffeesErrors,
-    getCoffeesSuccess
+    getCoffeesSuccess,
+    focusCoffee
 } = coffeeSlice.actions;
 
 export default coffeeSlice.reducer;
