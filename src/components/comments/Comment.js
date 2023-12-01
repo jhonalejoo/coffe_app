@@ -2,7 +2,7 @@ import { StyleSheet, FlatList, View, Text, TextInput, TouchableOpacity } from 'r
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getCommentsLoading } from '../../state/features/comment/reducers';
-import CommentItem from './components/CoffeeItem';
+import CommentItem from './components/CommentItem';
 
 
 const Comment = ({ navigation }) => {

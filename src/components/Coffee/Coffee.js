@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   inputText: {
-    backgroundColor: '#FCFCFC',
+    backgroundColor: '#dddddd',
     padding: 10,
     width: '100%',
     marginVertical: 5
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
   contentInput: {
     marginVertical: 10,
     width: '100%',
+    color:'black'
   },
   button: {
     backgroundColor: '#674334',
@@ -165,6 +166,6 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: 'white',
-    fontSize: 13
+    fontSize: 13,
   },
 })
